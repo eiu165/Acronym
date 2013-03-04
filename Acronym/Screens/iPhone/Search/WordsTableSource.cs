@@ -31,6 +31,17 @@ namespace Acronym
 		{
 			return words.Count;
 		}
+
+
+		
+		public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
+		{
+
+			Console.WriteLine ("MonoCatalog: Row selected {0} acronym selected {1}", indexPath.Row, Words[indexPath.Row]);
+			
+			//var cont = mvc.samples [indexPath.Row].Controller;
+			//mvc.NavigationController.PushViewController (cont, true);
+		}
 		
 		/// <summary>
 		/// called by the table to determine how many sections to create, in this case, we just have one
