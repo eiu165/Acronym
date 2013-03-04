@@ -102,6 +102,7 @@
       <DependentUpon>SearchScreen.xib</DependentUpon>
     </Compile>
     <Compile Include="Entity\Entry.cs" />
+    <Compile Include="Screens\iPhone\Search\WordsTableSource.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
