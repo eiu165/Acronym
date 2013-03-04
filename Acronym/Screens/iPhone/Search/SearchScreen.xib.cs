@@ -4,6 +4,8 @@ using System.Linq;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using System.IO;
+using Abbreviation; 
+using System.Xml.Linq;
 
 namespace Acronym.Screens.iPhone.Search
 {
@@ -13,7 +15,7 @@ namespace Acronym.Screens.iPhone.Search
 		/// <summary>
 		/// the dictionary that will hold our words
 		/// </summary>
-		List<string> _dictionary = null;
+		List<Entry> _dictionary = null;
 		
 		/// <summary>
 		/// The table source that will hold our matches
@@ -60,11 +62,11 @@ namespace Acronym.Screens.iPhone.Search
 			// create our table source and bind it to the table
 			_tableSource = new WordsTableSource();
 			tblMain.Source = _tableSource;
-			_tableSource.Words = _dictionary;
+			_tableSource.Words = _dictionary.Select(x=> x.Acronym).ToList();
 			tblMain.ReloadData();
-			
+			 
 			// wire up the search button clicked handler to hide the keyboard
-			srchMain.SearchButtonClicked += (s, e) => { srchMain.ResignFirstResponder(); };
+			srchMain.SearchButtonClicked += (s, e) => { srchMain.ResignFirstResponder(); }; 
 			
 			// refine the search results every time the text changes
 			srchMain.TextChanged += (s, e) => { RefineSearchItems(); };
@@ -75,8 +77,15 @@ namespace Acronym.Screens.iPhone.Search
 		/// </summary>
 		protected void LoadWords()
 		{
-			_dictionary = File.ReadAllLines("Content/WordList.txt").ToList();
-
+			//_dictionary = File.ReadAllLines("Content/WordList.txt").ToList();
+			var doc = XDocument.Load("Content/EntryList.xml");
+			_dictionary = doc.Descendants("Entry")
+				.Select(o => new Entry
+				        {
+					Acronym = (string)o.Attribute("Acronym"),
+					Discription = (string)o.Attribute("Discription") 
+				}).ToList();
+			 
 		}
 
 		/// <summary>
@@ -87,7 +96,9 @@ namespace Acronym.Screens.iPhone.Search
 		{
 			// select our words
 			_tableSource.Words = _dictionary
-				.Where(w => w.Contains(srchMain.Text)).ToList();
+				.Where(w => w.Acronym.Contains(srchMain.Text))
+				.Select (w=> w.Acronym)
+				.ToList();
 			
 			// refresh the table
 			tblMain.ReloadData();
