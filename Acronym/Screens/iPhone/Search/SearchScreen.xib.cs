@@ -5,7 +5,7 @@ using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using System.IO;
 
-namespace Abbreviation.Screens.iPhone.Search
+namespace Acronym.Screens.iPhone.Search
 {
 	public partial class SearchScreen : UIViewController
 	{

@@ -85,6 +85,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="Content\" />
+    <Folder Include="Screens\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -92,13 +94,18 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="AcronymViewController.cs" />
-    <Compile Include="AcronymViewController.designer.cs">
-      <DependentUpon>AcronymViewController.cs</DependentUpon>
+    <Compile Include="Screens\iPhone\Search\SearchScreen.xib.cs">
+      <DependentUpon>SearchScreen.xib</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\iPhone\Search\SearchScreen.xib.designer.cs">
+      <DependentUpon>SearchScreen.xib</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <InterfaceDefinition Include="AcronymViewController.xib" />
-  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <InterfaceDefinition Include="Screens\iPhone\Search\SearchScreen.xib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\WordList.txt" />
+  </ItemGroup>
 </Project>

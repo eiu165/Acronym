@@ -4,6 +4,7 @@ using System.Linq;
 
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
+using Acronym.Screens.iPhone.Search;
 
 namespace Acronym
 {
@@ -15,7 +16,7 @@ namespace Acronym
 	{
 		// class-level declarations
 		UIWindow window;
-		AcronymViewController viewController;
+		SearchScreen viewController;
 
 		//
 		// This method is invoked when the application has loaded and is ready to run. In this 
@@ -28,7 +29,7 @@ namespace Acronym
 		{
 			window = new UIWindow (UIScreen.MainScreen.Bounds);
 			
-			viewController = new AcronymViewController ();
+			viewController = new SearchScreen ();
 			window.RootViewController = viewController;
 			window.MakeKeyAndVisible ();
 			
