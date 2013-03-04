@@ -89,6 +89,7 @@
     <Folder Include="Content\" />
     <Folder Include="Screens\" />
     <Folder Include="Entity\" />
+    <Folder Include="Screens\iPhone\Common\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -104,10 +105,17 @@
     </Compile>
     <Compile Include="Entity\Entry.cs" />
     <Compile Include="Screens\iPhone\Search\WordsTableSource.cs" />
+    <Compile Include="Screens\iPhone\Common\TextViewController.xib.cs">
+      <DependentUpon>TextViewController.xib</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\iPhone\Common\TextViewController.xib.designer.cs">
+      <DependentUpon>TextViewController.xib</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <InterfaceDefinition Include="Screens\iPhone\Search\SearchScreen.xib" />
+    <InterfaceDefinition Include="Screens\iPhone\Common\TextViewController.xib" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\WordList.txt" />

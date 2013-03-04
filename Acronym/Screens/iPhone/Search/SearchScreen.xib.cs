@@ -58,12 +58,7 @@ namespace Acronym.Screens.iPhone.Search
 			
 			// load our dictonary words
 			LoadWords();
-			
-			// create our table source and bind it to the table
-			_tableSource = new WordsTableSource();
-			tblMain.Source = _tableSource;
-			_tableSource.Words = _dictionary.Select(x=> x.Acronym).ToList();
-			tblMain.ReloadData();
+
 			 
 			// wire up the search button clicked handler to hide the keyboard
 			srchMain.SearchButtonClicked += (s, e) => { srchMain.ResignFirstResponder(); }; 
@@ -75,17 +70,21 @@ namespace Acronym.Screens.iPhone.Search
 		/// <summary>
 		/// This loads our dictionary of words into our _dictionary object.
 		/// </summary>
-		protected void LoadWords()
-		{
-			//_dictionary = File.ReadAllLines("Content/WordList.txt").ToList();
-			var doc = XDocument.Load("Content/EntryList.xml");
-			_dictionary = doc.Descendants("Entry")
-				.Select(o => new Entry
-				        {
+		protected void LoadWords ()
+		{ 
+			var doc = XDocument.Load ("Content/EntryList.xml");
+			_dictionary = doc.Descendants ("Entry")
+				.Select (o => new Entry
+				{
 					Acronym = (string)o.Attribute("Acronym"),
+					AcronymLower = o.Attribute("Acronym").ToString().ToLower(),
 					Discription = (string)o.Attribute("Discription") 
-				}).ToList();
-			 
+				}).ToList ();
+			// create our table source and bind it to the table
+			_tableSource = new WordsTableSource();
+			tblMain.Source = _tableSource;
+			_tableSource.Words = _dictionary.Select(x=> x.Acronym).ToList();
+			tblMain.ReloadData();	 
 		}
 
 		/// <summary>
@@ -96,7 +95,7 @@ namespace Acronym.Screens.iPhone.Search
 		{
 			// select our words
 			_tableSource.Words = _dictionary
-				.Where(w => w.Acronym.Contains(srchMain.Text))
+				.Where(w => w.AcronymLower.Contains(srchMain.Text.ToLower ()))
 				.Select (w=> w.Acronym)
 				.ToList();
 			
