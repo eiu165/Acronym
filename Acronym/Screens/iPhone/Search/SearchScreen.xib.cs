@@ -49,6 +49,13 @@ namespace Acronym.Screens.iPhone.Search
 		}
 		
 		#endregion
+
+		public override void ViewDidDisappear (bool animated)
+		{
+			base.ViewDidDisappear (animated);
+			srchMain.ResignFirstResponder(); 
+
+		}
 		
 		public override void ViewDidLoad ()
 		{
@@ -62,6 +69,11 @@ namespace Acronym.Screens.iPhone.Search
 			srchMain.ShowsCancelButton = true;
 			// wire up the search button clicked handler to hide the keyboard
 			srchMain.SearchButtonClicked += (s, e) => { srchMain.ResignFirstResponder(); }; 
+			srchMain.CancelButtonClicked += (s, e) => { 
+				srchMain.Text = "" ; 
+				this.RefineSearchItems();
+				srchMain.ResignFirstResponder(); 
+			}; 
 			
 			// refine the search results every time the text changes
 			srchMain.TextChanged += (s, e) => { RefineSearchItems(); };
