@@ -16,7 +16,9 @@ namespace Acronym
 	{
 		// class-level declarations
 		UIWindow window;
-		SearchScreen viewController;
+		NavViewController viewController;
+		UINavigationController  rootNavigationController;
+		//SearchScreen viewController;
 
 		//
 		// This method is invoked when the application has loaded and is ready to run. In this 
@@ -27,23 +29,25 @@ namespace Acronym
 		//
 		public override bool FinishedLaunching (UIApplication app, NSDictionary options)
 		{
+			//RegisterDefaultsFromSettingsBundle();
 			window = new UIWindow (UIScreen.MainScreen.Bounds);
 
- 
+
 			//---- instantiate a new navigation controller
-			var rootNavigationController = new UINavigationController();
-			viewController = new SearchScreen ();
-			//---- add the home screen to the navigation controller (it'll be the top most screen)
-			rootNavigationController.PushViewController(viewController, false);
+			this.rootNavigationController = new UINavigationController();
 			
+			//viewController = new SearchScreen ();
+			viewController = new NavViewController ();
+
+			//---- add the home screen to the navigation controller (it'll be the top most screen)
+			this.rootNavigationController.PushViewController(viewController, false);
+
 			//---- set the root view controller on the window. the nav controller will handle the rest
-			this.window.RootViewController = rootNavigationController;
- 
-			window.RootViewController = viewController;
+			this.window.RootViewController = this.rootNavigationController; 
 			window.MakeKeyAndVisible ();
 			
 			return true;
-		}
+		} 
 	}
 }
 

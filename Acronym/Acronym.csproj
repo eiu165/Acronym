@@ -111,11 +111,16 @@
     <Compile Include="Screens\iPhone\Common\TextViewController.xib.designer.cs">
       <DependentUpon>TextViewController.xib</DependentUpon>
     </Compile>
+    <Compile Include="Screens\iPhone\Common\NavViewController.cs" />
+    <Compile Include="Screens\iPhone\Common\NavViewController.designer.cs">
+      <DependentUpon>NavViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <InterfaceDefinition Include="Screens\iPhone\Search\SearchScreen.xib" />
     <InterfaceDefinition Include="Screens\iPhone\Common\TextViewController.xib" />
+    <InterfaceDefinition Include="Screens\iPhone\Common\NavViewController.xib" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\WordList.txt" />
