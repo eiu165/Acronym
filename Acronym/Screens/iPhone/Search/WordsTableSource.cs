@@ -2,6 +2,7 @@ using System;
 using MonoTouch.UIKit;
 using System.Collections.Generic;
 using MonoTouch.Foundation;
+using Abbreviation;
 
 namespace Acronym
 {
@@ -20,12 +21,12 @@ namespace Acronym
 		/// <summary>
 		/// The words to display in the table
 		/// </summary>
-		public List<string> Words
+		public List<Entry> Words
 		{
 			get { return words; }
 			set { words = value; }
 		}
-		protected List<string> words = new List<string>();
+		protected List<Entry> words = new List<Entry>();
 		
 		/// <summary>
 		/// called by the table to determine how many rows to create, in our case, it's the number 
@@ -41,7 +42,7 @@ namespace Acronym
 		public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
 		{
 
-			Console.WriteLine ("MonoCatalog: Row selected {0} acronym selected {1}", indexPath.Row, Words[indexPath.Row]);
+			Console.WriteLine ("MonoCatalog: Row selected {0} acronym selected {1}", indexPath.Row, Words[indexPath.Row].Acronym);
 
 			var cont = new TextViewController("aaaaa");
 			this._viewController.NavigationController.PushViewController (cont, true); 
@@ -65,7 +66,7 @@ namespace Acronym
 		{
 			// declare vars
 			UITableViewCell cell = tableView.DequeueReusableCell (cellIdentifier);
-			string word = words[indexPath.Row];
+			string word = words[indexPath.Row].Acronym;
 			
 			// if there are no cells to reuse, create a new one
 			if (cell == null)

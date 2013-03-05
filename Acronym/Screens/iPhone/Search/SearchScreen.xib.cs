@@ -83,7 +83,7 @@ namespace Acronym.Screens.iPhone.Search
 			// create our table source and bind it to the table
 			_tableSource = new WordsTableSource(this);
 			tblMain.Source = _tableSource;
-			_tableSource.Words = _dictionary.Select(x=> x.Acronym).ToList();
+			_tableSource.Words = _dictionary.ToList();
 			tblMain.ReloadData();	 
 		}
 
@@ -95,8 +95,7 @@ namespace Acronym.Screens.iPhone.Search
 		{
 			// select our words
 			_tableSource.Words = _dictionary
-				.Where(w => w.AcronymLower.Contains(srchMain.Text.ToLower ()))
-				.Select (w=> w.Acronym)
+				.Where(w => w.AcronymLower.Contains(srchMain.Text.ToLower ())) 
 				.ToList();
 			
 			// refresh the table
