@@ -33,6 +33,17 @@ namespace Acronym
 			};
 
 		}
+
+		public override void ViewDidAppear(bool animated)
+		{
+			base.ViewDidAppear(animated);
+			this.NavigationController.SetNavigationBarHidden(true, animated);
+		}
+		public override void ViewWillDisappear (bool animated)
+		{
+			base.ViewWillDisappear(animated);
+			this.NavigationController.SetNavigationBarHidden(false, animated);
+		} 
 		
 		public override void ViewDidUnload ()
 		{
