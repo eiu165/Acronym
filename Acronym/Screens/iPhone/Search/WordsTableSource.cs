@@ -11,8 +11,12 @@ namespace Acronym
 	/// </summary>
 	public class WordsTableSource : UITableViewSource
 	{
+		private UIViewController _viewController;
 		protected string cellIdentifier = "wordsCell";
-		
+		public WordsTableSource(UIViewController  viewController)
+		{
+			this._viewController = viewController;
+		}
 		/// <summary>
 		/// The words to display in the table
 		/// </summary>
@@ -38,9 +42,9 @@ namespace Acronym
 		{
 
 			Console.WriteLine ("MonoCatalog: Row selected {0} acronym selected {1}", indexPath.Row, Words[indexPath.Row]);
-			
-			//var cont = mvc.samples [indexPath.Row].Controller;
-			//mvc.NavigationController.PushViewController (cont, true);
+
+			//var cont = new TextViewController("aaaaa");
+			//this._viewController.NavigationController.PushViewController (cont, true); 
 		}
 		
 		/// <summary>

@@ -81,7 +81,7 @@ namespace Acronym.Screens.iPhone.Search
 					Discription = (string)o.Attribute("Discription") 
 				}).ToList ();
 			// create our table source and bind it to the table
-			_tableSource = new WordsTableSource();
+			_tableSource = new WordsTableSource(this);
 			tblMain.Source = _tableSource;
 			_tableSource.Words = _dictionary.Select(x=> x.Acronym).ToList();
 			tblMain.ReloadData();	 

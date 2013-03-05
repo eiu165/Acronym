@@ -28,8 +28,17 @@ namespace Acronym
 		public override bool FinishedLaunching (UIApplication app, NSDictionary options)
 		{
 			window = new UIWindow (UIScreen.MainScreen.Bounds);
-			
+
+ 
+			//---- instantiate a new navigation controller
+			var rootNavigationController = new UINavigationController();
 			viewController = new SearchScreen ();
+			//---- add the home screen to the navigation controller (it'll be the top most screen)
+			rootNavigationController.PushViewController(viewController, false);
+			
+			//---- set the root view controller on the window. the nav controller will handle the rest
+			this.window.RootViewController = rootNavigationController;
+ 
 			window.RootViewController = viewController;
 			window.MakeKeyAndVisible ();
 			
