@@ -16,9 +16,9 @@ namespace Acronym
 	{
 		// class-level declarations
 		UIWindow window;
-		NavViewController viewController;
+		//NavViewController viewController;
+		SearchScreen viewController;
 		UINavigationController  rootNavigationController;
-		//SearchScreen viewController;
 
 		//
 		// This method is invoked when the application has loaded and is ready to run. In this 
@@ -36,8 +36,8 @@ namespace Acronym
 			//---- instantiate a new navigation controller
 			this.rootNavigationController = new UINavigationController();
 			
-			//viewController = new SearchScreen ();
-			viewController = new NavViewController ();
+			viewController = new SearchScreen ();
+			//viewController = new NavViewController ();
 
 			//---- add the home screen to the navigation controller (it'll be the top most screen)
 			this.rootNavigationController.PushViewController(viewController, false);

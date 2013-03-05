@@ -43,8 +43,10 @@ namespace Acronym
 
 			Console.WriteLine ("MonoCatalog: Row selected {0} acronym selected {1}", indexPath.Row, Words[indexPath.Row]);
 
-			//var cont = new TextViewController("aaaaa");
-			//this._viewController.NavigationController.PushViewController (cont, true); 
+			var cont = new TextViewController("aaaaa");
+			this._viewController.NavigationController.PushViewController (cont, true); 
+
+			//this._viewController.
 		}
 		
 		/// <summary>

@@ -54,12 +54,12 @@ namespace Acronym.Screens.iPhone.Search
 		{
 			base.ViewDidLoad ();
 			
-			NavigationItem.Title = "Search Bar Example";
+			NavigationItem.Title = "Acronyms";
 			
 			// load our dictonary words
 			LoadWords();
 
-			 
+			srchMain.ShowsCancelButton = true;
 			// wire up the search button clicked handler to hide the keyboard
 			srchMain.SearchButtonClicked += (s, e) => { srchMain.ResignFirstResponder(); }; 
 			
