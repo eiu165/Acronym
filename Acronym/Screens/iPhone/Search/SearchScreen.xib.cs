@@ -78,7 +78,7 @@ namespace Acronym.Screens.iPhone.Search
 				{
 					Acronym = (string)o.Attribute("Acronym"),
 					AcronymLower = o.Attribute("Acronym").ToString().ToLower(),
-					Discription = (string)o.Attribute("Discription") 
+					Description = (string)o.Attribute("Description") 
 				}).ToList ();
 			// create our table source and bind it to the table
 			_tableSource = new WordsTableSource(this);
