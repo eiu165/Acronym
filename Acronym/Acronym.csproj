@@ -123,7 +123,6 @@
     <InterfaceDefinition Include="Screens\iPhone\Common\NavViewController.xib" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\WordList.txt" />
     <Content Include="Content\EntryList.xml" />
   </ItemGroup>
 </Project>
