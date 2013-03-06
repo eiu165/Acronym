@@ -1,13 +1,46 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Entries>
-	<Entry Acronym="AAB" Description="asdfdsfkl jfksaldfjsakljsdlkf jsaklf jsakdl;fj salk;fjsalfjsdl"></Entry>
-	<Entry Acronym="ABAB" Description="asdfdsfkl jfksaldfjsakljsdlkf jsaklf jsakdl;fj salk;fjsalfjsdl"></Entry>
-	<Entry Acronym="ACSB" Description="asdfdsfkl jfksaldfjsakljsdlkf jsaklf jsakdl;fj salk;fjsalfjsdl"></Entry>
-	<Entry Acronym="BSA" Description="asdfdsfkl jfksaldfjsakljsdlkf jsaklf jsakdl;fj salk;fjsalfjsdl"></Entry>
-	<Entry Acronym="BA" Description="asdfdsfkl jfksaldfjsakljsdlkf jsaklf jsakdl;fj salk;fjsalfjsdl"></Entry>
-	<Entry Acronym="CAB" Description="asdfdsfkl jfksaldfjsakljsdlkf jsaklf jsakdl;fj salk;fjsalfjsdl"></Entry>
-	<Entry Acronym="COB" Description="asdfdsfkl jfksaldfjsakljsdlkf jsaklf jsakdl;fj salk;fjsalfjsdl"></Entry>
-	<Entry Acronym="DERB" Description="asdfdsfkl jfksaldfjsakljsdlkf jsaklf jsakdl;fj salk;fjsalfjsdl"></Entry>
-	<Entry Acronym="DAB" Description="asdfdsfkl jfksaldfjsakljsdlkf jsaklf jsakdl;fj salk;fjsalfjsdl"></Entry>
-	<Entry Acronym="EER" Description="asdfdsfkl jfksaldfjsakljsdlkf jsaklf jsakdl;fj salk;fjsalfjsdl"></Entry>
+
+
+<Entry Acronym="AA" Description="Administrator’s Academy"></Entry>
+<Entry Acronym="AASA" Description="American Association of School Administrators"></Entry>
+<Entry Acronym="AAVIM" Description="American Association for Vocational Instructional Materials"></Entry>
+<Entry Acronym="ABE" Description="Adult Basic Education"></Entry>
+<Entry Acronym="ACCESS" Description="Assessing Comprehension and Communication in English State-to-State for English Language Learners"></Entry>
+<Entry Acronym="ACT" Description="American College Testing"></Entry>
+<Entry Acronym="ADA" Description="Americans with Disabilities Act"></Entry>
+<Entry Acronym="ADD" Description="Attention Deficit Disorder"></Entry>
+<Entry Acronym="ADE" Description="Average Daily Enrollment"></Entry>
+<Entry Acronym="ADHD" Description="Attention Deficit Hyperactivity Disorder"></Entry>
+<Entry Acronym="ADP" Description="Average Daily Participation"></Entry>
+<Entry Acronym="AEWL" Description="Academic Early Warning List"></Entry>
+<Entry Acronym="AFT" Description="American Federation of Teachers"></Entry>
+<Entry Acronym="AP" Description="Advanced Placement"></Entry>
+<Entry Acronym="APE" Description="Adapted Physical Education"></Entry>
+<Entry Acronym="APR" Description="Annual Performance Report"></Entry>
+<Entry Acronym="AT" Description="Assistive Technology"></Entry>
+<Entry Acronym="AVC" Description="Area Vocational Center"></Entry>
+<Entry Acronym="AYP" Description=" Adequate Yearly Progress"></Entry>
+<Entry Acronym="AIMS WEB" Description=""></Entry>
+<Entry Acronym="ALEKS" Description=""></Entry>
+<Entry Acronym="BD" Description="Behavioral Disorders"></Entry> 
+<Entry Acronym="BOE" Description="Board of Education"></Entry>
+<Entry Acronym="CACFP" Description="Child and Adult Care Food Program"></Entry>
+<Entry Acronym="CCADE" Description="Council of Chicago Area Deans of Education"></Entry>
+<Entry Acronym="CCSS" Description="Common Core State Standards"></Entry>
+<Entry Acronym="CCSSO" Description="Council of Chief State School Officers"></Entry>
+<Entry Acronym="CDB" Description="Capital Development Board"></Entry>
+<Entry Acronym="CDC" Description="Centers for Disease Control and Prevention"></Entry>
+<Entry Acronym="COE" Description="Code of Ethics"></Entry>
+<Entry Acronym="CORD" Description="Center for Occupational Research and Development"></Entry>
+<Entry Acronym="CPDU" Description=" Continuing Professional Development Unit"></Entry>
+<Entry Acronym="CEC" Description="Center for Exceptional Children"></Entry>
+<Entry Acronym="DARE" Description="Drug Abuse Resistance Education"></Entry>
+<Entry Acronym="DCEO" Description="Department of Commerce and Economic Opportunity"></Entry>
+<Entry Acronym="DCFS" Description="Department of Children and Family Services"></Entry>
+<Entry Acronym="DD" Description="Developmental Delay"></Entry>
+<Entry Acronym="DHS" Description="Department of Human Services"></Entry>
+<Entry Acronym="DL" Description="Distance Learning"></Entry>
+<Entry Acronym="DoD" Description="Department of Defense"></Entry>
+<Entry Acronym="DOE" Description="Department of Education"></Entry>
 </Entries>

@@ -61,7 +61,7 @@ namespace Acronym.Screens.iPhone.Search
 		{
 			base.ViewDidLoad ();
 			
-			NavigationItem.Title = "Acronyms";
+			NavigationItem.Title = "Sped Acronyms";
 			
 			// load our dictonary words
 			LoadWords();

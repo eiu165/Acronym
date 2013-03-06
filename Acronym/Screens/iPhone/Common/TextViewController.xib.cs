@@ -5,46 +5,37 @@ using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using System.Drawing;
 using System;
+using Abbreviation;
 
 namespace Acronym {
 	
 	public partial class TextViewController : UIViewController {
-		UITextView textView;
+		UITextView label;
 		NSObject obs1, obs2;
 
-		public string _text;
+		private Entry _entry; 
 
-		public TextViewController(string text)
+		public TextViewController(Entry entry)
 		{
-			_text = text;
+			_entry = entry;
 		}
 
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
 			
-			Title = "Text View";
-			textView = new UITextView (View.Frame){
+			Title = this._entry.Acronym;
+			label = new UITextView (View.Frame){
 				TextColor = UIColor.Black,
 				Font = UIFont.FromName ("Arial", 18f),
-				BackgroundColor = UIColor.White,
-				Text = _text,
+				BackgroundColor = UIColor.White,  
 				ReturnKeyType = UIReturnKeyType.Default,
 				KeyboardType = UIKeyboardType.Default,
-				ScrollEnabled = true,
+				ScrollEnabled = true, 
+				Text = this._entry.Description,  
 				AutoresizingMask = UIViewAutoresizing.FlexibleHeight,
-			};
-	
-			// Provide our own save button to dismiss the keyboard
-			textView.Started += delegate {
-				var saveItem = new UIBarButtonItem (UIBarButtonSystemItem.Done, delegate {
-					textView.ResignFirstResponder ();
-					NavigationItem.RightBarButtonItem = null;
-					});
-				NavigationItem.RightBarButtonItem = saveItem;
-			};
-			
-			View.AddSubview (textView);
+			};  
+			View.AddSubview (label);
 		}
 	
 		public override void ViewWillAppear (bool animated)
